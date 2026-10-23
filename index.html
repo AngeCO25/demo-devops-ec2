@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo DevOps EC2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f1ec;
+            color: #2b2b2b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .tarjeta {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            max-width: 520px;
+            text-align: center;
+        }
+        h1 {
+            color: #6b3e26;
+            margin-top: 0;
+        }
+        .pasos {
+            text-align: left;
+            line-height: 1.8;
+        }
+        .pie {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>Despliegue automatico en AWS</h1>
+        <p>Esta pagina se publica sola cada vez que hago push a la rama main.</p>
+
+        <!-- Flujo del despliegue -->
+        <ol class="pasos">
+            <li>Hago push a GitHub</li>
+            <li>GitHub Actions se ejecuta</li>
+            <li>Se conecta por SSH a la EC2</li>
+            <li>Actualiza el codigo y reinicia Apache</li>
+        </ol>
+
+        <p class="pie">Angela Carrasco - Ingenieria DevOps - Duoc UC</p>
+    </div>
+</body>
+</html>
