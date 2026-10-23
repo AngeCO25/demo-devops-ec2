@@ -3,55 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo DevOps EC2</title>
+    <title>Café Aroma</title>
     <style>
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f1ec;
-            color: #2b2b2b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #faf6f0;
+            color: #3b2a20;
         }
-        .tarjeta {
+
+        /* Barra superior */
+        header {
+            background: #3b2a20;
+            color: #f5e6d3;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #f5e6d3;
+            text-decoration: none;
+            margin-left: 24px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        /* Portada */
+        .portada {
+            background: linear-gradient(rgba(59, 42, 32, 0.75), rgba(59, 42, 32, 0.75)),
+                        repeating-linear-gradient(45deg, #6b4a36 0 20px, #5a3d2c 20px 40px);
+            color: #ffffff;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .portada h1 {
+            font-size: 48px;
+            margin: 0 0 12px;
+        }
+
+        .portada p {
+            font-size: 20px;
+            margin: 0 0 28px;
+            color: #f0dcc4;
+        }
+
+        .boton {
+            background: #c8873f;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Menu */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 34px;
+            margin: 0 0 8px;
+        }
+
+        .linea {
+            width: 60px;
+            height: 3px;
+            background: #c8873f;
+            margin: 0 auto 40px;
+        }
+
+        .categoria {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #c8873f;
+            font-size: 14px;
+            margin: 30px 0 12px;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .producto {
             background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            max-width: 520px;
+            border-radius: 10px;
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .producto h3 {
+            margin: 0;
+            font-size: 19px;
+        }
+
+        .precio {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #6b4a36;
+            font-size: 18px;
+        }
+
+        .agotado {
+            opacity: 0.5;
+        }
+
+        .agotado .precio {
+            color: #b0413e;
+            font-size: 14px;
+        }
+
+        /* Nosotros */
+        .nosotros {
+            background: #f0e4d4;
+            max-width: none;
             text-align: center;
         }
-        h1 {
-            color: #6b3e26;
-            margin-top: 0;
+
+        .nosotros p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.7;
         }
-        .pasos {
-            text-align: left;
-            line-height: 1.8;
-        }
-        .pie {
-            margin-top: 24px;
+
+        footer {
+            background: #3b2a20;
+            color: #cbb8a3;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
             font-size: 14px;
-            color: #777777;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
-    <div class="tarjeta">
-        <h1>Despliegue automatico en AWS</h1>
-        <p>Esta pagina se publica sola cada vez que hago push a la rama main.</p>
 
-        <!-- Flujo del despliegue -->
-        <ol class="pasos">
-            <li>Hago push a GitHub</li>
-            <li>GitHub Actions se ejecuta</li>
-            <li>Se conecta por SSH a la EC2</li>
-            <li>Actualiza el codigo y reinicia Apache</li>
-        </ol>
+    <header>
+        <div class="logo">CAFÉ AROMA</div>
+        <nav>
+            <a href="#menu">Menú</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-        <p class="pie">Angela Carrasco - Ingenieria DevOps - Duoc UC</p>
+    <div class="portada">
+        <h1>El café de cada día</h1>
+        <p>Café de especialidad y pastelería hecha en casa</p>
+        <a href="#menu" class="boton">Ver el menú</a>
     </div>
+
+    <section id="menu">
+        <h2>Nuestro menú</h2>
+        <div class="linea"></div>
+
+        <div class="categoria">Café</div>
+        <div class="productos">
+            <div class="producto"><h3>Espresso</h3><span class="precio">$1.800</span></div>
+            <div class="producto"><h3>Cappuccino</h3><span class="precio">$3.200</span></div>
+            <div class="producto"><h3>Latte</h3><span class="precio">$3.500</span></div>
+        </div>
+
+        <div class="categoria">Té</div>
+        <div class="productos">
+            <div class="producto"><h3>Té chai</h3><span class="precio">$2.900</span></div>
+        </div>
+
+        <div class="categoria">Pastelería</div>
+        <div class="productos">
+            <div class="producto"><h3>Croissant</h3><span class="precio">$2.500</span></div>
+            <div class="producto"><h3>Cheesecake</h3><span class="precio">$4.200</span></div>
+        </div>
+
+        <div class="categoria">Frío</div>
+        <div class="productos">
+            <div class="producto agotado"><h3>Jugo natural</h3><span class="precio">Agotado</span></div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="nosotros">
+        <h2>Nosotros</h2>
+        <div class="linea"></div>
+        <p>Somos una cafetería de barrio que prepara cada taza con dedicación. Trabajamos con granos seleccionados y horneamos nuestra pastelería todos los días.</p>
+    </section>
+
+    <footer id="contacto">
+        Lunes a sábado de 8:00 a 20:00<br>
+        Café Aroma &middot; Proyecto Ingeniería DevOps &middot; Duoc UC<br>
+        Sitio desplegado automáticamente en AWS EC2 con GitHub Actions
+    </footer>
+
 </body>
 </html>
